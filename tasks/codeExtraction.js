@@ -15,6 +15,7 @@ module.exports = function(grunt) {
     var options = this.options({
       prefix_start: 'start:',
       prefix_end: 'end:',
+      code_replace:"#parse",
       encoding:'utf8'
     });
     var regObj = {};
@@ -49,7 +50,7 @@ module.exports = function(grunt) {
           if (blockList.length > 0) {
             for (var j = 0; j < blockList.length; j++) {
               replaceArray = blockList[j];
-              src = src.replace(replaceArray[0], '#parse("' + replaceArray[1] + '")');
+              src = src.replace(replaceArray[0], options.code_replace+'("' + replaceArray[1] + '")');
               grunt.file.write(f.dest + 'block-' + fileName + '-' + replaceArray[1] + fileSuffix, replaceArray[0], {
                 encoding: options.encoding
               });

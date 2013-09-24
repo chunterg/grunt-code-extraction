@@ -2,6 +2,38 @@
 
 > Extract specified codes from html comment.
 
+##What can this plugin do
+
+####The orginal file a.html
+```html
+<div>
+  <!--start:block1-->
+  <div>
+    block code
+  </div>
+  <!--end:block1-->
+</div>
+```
+
+####The new file a.html
+```html
+<div>
+#parse("block1")
+</div>
+```
+
+####And new files which extract from a.html
+
+block-a-block1.html
+
+```html
+<!--start:block1-->
+<div>
+  block code
+</div>
+<!--end:block1-->
+```
+
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
 
@@ -19,21 +51,6 @@ grunt.loadNpmTasks('grunt-code-extraction');
 
 ## The "code-extraction" task
 
-### Overview
-In your project's Gruntfile, add a section named `codeExtraction` to the data object passed into `grunt.initConfig()`.
-
-```js
-grunt.initConfig({
-  codeExtraction: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
-})
-```
 
 ### Options
 
@@ -41,13 +58,14 @@ grunt.initConfig({
 Type: `String`
 Default value: `start:,means <!--start:name--> in html code`
 
-A string value that is used to do something with whatever.
 
 #### options.prefix_end
 Type: `String`
 Default value: `start:,means <!--end:name--> in html code`
 
-A string value that is used to do something else with whatever else.
+#### options.code_replace
+Type: `String`
+Default value: `#parse:,means #parse("") in html code`
 
 ### Usage Examples
 
