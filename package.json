@@ -3,7 +3,7 @@
   "description": "Extract specified codes.",
   "version": "0.1.1",
   "homepage": "https://github.com/chunterg/grunt-code-extraction",
-  "author": {},
+  "author": "chunterg (https://github.com/chunterg)",
   "repository": {
     "type": "git",
     "url": "git://github.com/chunterg/grunt-code-extraction.git"
