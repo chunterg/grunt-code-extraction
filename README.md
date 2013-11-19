@@ -56,16 +56,25 @@ grunt.loadNpmTasks('grunt-code-extraction');
 
 #### options.prefix_start
 Type: `String`
-Default value: `start:,means <!--start:name--> in html code`
+
+Default value: `start:`,means `<!--start:name-->` in html code
 
 
 #### options.prefix_end
 Type: `String`
-Default value: `start:,means <!--end:name--> in html code`
+
+Default value: `start:`,means `<!--end:name-->` in html code
 
 #### options.code_replace
 Type: `String`
-Default value: `#parse:,means #parse("") in html code`
+
+Default value: `#parse:`,means #parse("") in html code`
+
+#### options.encoding
+Type: `String`
+
+Default value: `gbk`
+
 
 ### Usage Examples
 
@@ -79,6 +88,7 @@ grunt.initConfig({
         options: {
           prefix_start:"start:",
           prefix_end:"end:",
+          code_replace:"#include"
           encoding:'gbk'
         },
         files: {

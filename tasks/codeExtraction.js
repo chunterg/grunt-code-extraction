@@ -11,6 +11,7 @@ module.exports = function(grunt) {
   // creation: http://gruntjs.com/creating-tasks
 
   grunt.registerMultiTask('codeExtraction', 'The best Grunt plugin ever.', function() {
+
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       prefix_start: 'start:',
